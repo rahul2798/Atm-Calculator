@@ -1,0 +1,7 @@
+{
+  "name": "Atm-Calculator",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
