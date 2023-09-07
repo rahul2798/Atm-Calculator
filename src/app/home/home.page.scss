@@ -1,27 +1,25 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+.container {
+  /* padding: 50px; */
+  background-color: rgb(244, 246, 248);
+  /* margin: 50px; */
+  height: 100vh;
+  overflow-y: auto;
+  /* margin-bottom: 20px; */
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.thin-line {
+  border: 0.5px solid rgb(178, 175, 175);
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
 
-  color: #8c8c8c;
 
-  margin: 0;
+.contSuccess {
+  background-color: #cde4fc;
+}
+.contUnsuccess {
+  background-color: #f8c16f;
 }
 
-#container a {
-  text-decoration: none;
+.constWithdraw {
+  background-color: #69f3ca;
 }

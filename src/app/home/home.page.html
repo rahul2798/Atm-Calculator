@@ -1,20 +1,81 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<body>
+  <div class="container">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <h1>Solution</h1>
+    <div class="thin-line"></div>
+    <h3>Current Available Denomination in Machine</h3>
+
+
+
+    <table class="table table-striped">
+
+      <tbody>
+        <tr>
+          <th scope="row">2000</th>
+          <td>{{getBalance()[2000]}}</td>
+          <td>|</td>
+          <td> 
+            <input type="number" [(ngModel)]="inputValue1" /></td>
+        </tr>
+        <tr>
+          <th scope="row">500</th>
+          <td>{{getBalance()[500]}}</td>
+          <td>|</td>
+          <td><input type="number" [(ngModel)]="inputValue2"></td>
+        </tr>
+        <tr>
+          <th scope="row">200</th>
+          <td>{{getBalance()[200]}}</td>
+          <td>|</td>
+          <td><input type="number" [(ngModel)]="inputValue3"></td>
+        </tr>
+        <tr>
+          <th scope="row">100</th>
+          <td>{{getBalance()[100]}}</td>
+          <td>|</td>
+          <td><input type="number" [(ngModel)]="inputValue4"></td>
+        </tr>
+        <tr>
+          <th scope="row">Total</th>
+          <td>{{getTotalBalance()}}</td>
+          <td>|</td>
+          <td><button class="btn btn-primary" (click)="addTotalValueOfDenomination()">Deposit</button></td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <div class="thin-line"></div>
+
+    <div class="input-group mb-3" style="margin-top: 15px;">
+      <input type="text" class="form-control" [type]="'number'" placeholder="Enter amount for Withdrawl" aria-label="Recipient's username"
+        aria-describedby="button-addon2" [(ngModel)]="withdrawAmount1">
+      <div class="input-group-append">
+        <button class="btn btn-success" type="button" id="button-addon2" (click)="withdrawFunction()">Withdraw!</button>
+      </div>
+    </div>
+    <!-- <div *ngIf="AmountSumerror">{{AmountSumerrorText}}</div> -->
+
+    <div class="thin-line"></div>
+
+    <h1>Log</h1>
+
+    <div *ngFor="let data of formDatas" class="card-container card " style="margin-top: 10px;"  [ngClass]="{
+      'contSuccess': isCondition1,
+      'contUnsuccess': isCondition2,
+      'constWithdraw': isCondition3 
+    }">
+      <div >
+        {{data.msg}}
+        <div *ngFor="let x of data.value|keyvalue">
+          {{x.key}} * {{x.value}}
+        </div>
+        <p>{{ date | date: 'full' }}</p>
+      </div>
+      <!-- <app-card  *ngFor="let data of formDatas" [formData]="data"></app-card> -->
+    </div>
+  
+
   </div>
-</ion-content>
+</body>
